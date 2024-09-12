@@ -11,6 +11,7 @@ public class PalindromoController {
 		
 		String[] vetPalavra = new String[palavra.length()];
 		String[] palavraInvertida = new String[palavra.length()];
+		vetPalavra = vetoriza(palavra, vetPalavra);
 
         for (int i = 0; i < palavra.length(); i++) {
         	vetPalavra[i] = String.valueOf(palavra.charAt(i));
@@ -29,5 +30,12 @@ public class PalindromoController {
 	
 	public boolean comparaPalavras (String palavra, String palavraInvertida) {
 		 return palavra.toLowerCase().equals(palavraInvertida.toLowerCase());
+	}
+
+	private String[] vetoriza (String palavra, String[] vetPalavra) {
+		for (int i = 0; i < palavra.length(); i++) {
+	        	vetPalavra[i] = String.valueOf(palavra.charAt(i));
+	        }
+		 return vetPalavra;
 	}
 }
